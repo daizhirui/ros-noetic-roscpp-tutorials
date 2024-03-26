@@ -6,7 +6,7 @@ url='https://wiki.ros.org/roscpp_tutorials'
 pkgname='ros-noetic-roscpp-tutorials'
 pkgver='0.10.2'
 arch=('i686' 'x86_64' 'aarch64' 'armv7h' 'armv6h')
-pkgrel=1
+pkgrel=2
 license=('BSD')
 
 ros_makedepends=(
@@ -38,9 +38,10 @@ depends=(
 	${ros_depends[@]}
 )
 
-_dir="ros_tutorials-${pkgver}/roscpp_tutorials"
-source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/ros/ros_tutorials/archive/${pkgver}.tar.gz")
-sha256sums=('c191f004ffaae3d8723798ed808767190576ef49308140dcfc7ab1adb3b4dcd0')
+_commit="db6328879831b4abadac939bd69b43133414c0db"
+_dir="ros_tutorials-${_commit}/roscpp_tutorials"
+source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/ros/ros_tutorials/archive/${_commit}.tar.gz")
+sha256sums=('01de38281b09b45d2784b4ecd1cef408f5dd80c831bd2b05087021c7bbeb2687')
 
 build() {
 	# Use ROS environment variables.
